@@ -1,0 +1,18 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Edu+ Aura - Student QR Generator</title>
+<style>body{font-family:Arial;} .card{display:inline-block;border:1px solid #ccc;margin:10px;padding:10px;text-align:center;width:150px;} img{max-width:100%;}</style>
+</head>
+<body>
+<h2>Student QR Generator</h2>
+<div id="cards"></div>
+<script>
+let students = [{'id': 1, 'name': 'Anbu', 'roll': 1, 'class': 'A'}, {'id': 2, 'name': 'Meena', 'roll': 2, 'class': 'A'}, {'id': 3, 'name': 'Kumar', 'roll': 3, 'class': 'A'}, {'id': 4, 'name': 'Sri', 'roll': 4, 'class': 'A'}, {'id': 5, 'name': 'Devi', 'roll': 5, 'class': 'A'}];
+let container=document.getElementById('cards');
+students.forEach(s=>{ let div=document.createElement('div'); div.className='card'; div.innerHTML=`<img src="qr/${s.id}.png"><br><strong>${s.name}</strong><br>Roll:${s.roll}<br>Class:${s.class}`; container.appendChild(div); });
+</script>
+</body>
+</html>
