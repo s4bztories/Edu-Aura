@@ -103,7 +103,9 @@ def api_attendance_all():
 def serve_static(filename):
     return send_from_directory('../static', filename)
 
+# Initialize DB on startup (works both locally and on Render)
+init_db()
+
 if __name__ == '__main__':
-    init_db()
     print('Starting backend on http://0.0.0.0:5000')
     app.run(host='0.0.0.0', port=5000, debug=True)
